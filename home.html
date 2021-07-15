@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/home.css">
+    <title>Lista de Comandos</title>
+</head>
+<body>
+    <div class="list-commands" id="list">
+        <div class="title">LISTA DE COMANDOS</div>
+        <div class="line"></div>
+        <div class="list">
+            <div class="command">
+                <div class="name-cmd"><code>botinfo</code></div>
+                <div class="description">
+                    Comando para ver as informações da aplicação.
+                </div>
+            </div>
+            <div class="command">
+                <div class="name-cmd"><code>userinfo</code></div>
+                <div class="description">
+                    Comando para ver as informações do usuário.
+                </div>
+            </div>
+            <div class="command">
+                <div class="name-cmd"><code>help</code></div>
+                <div class="description">
+                    Comando para ver a lista de todos os meus comandos.
+                </div>
+            </div>
+            <div class="command">
+                <div class="name-cmd"><code>clear</code></div>
+                <div class="description">
+                    Comando para limpar mensagens em um canal.
+                </div>
+            </div>
+            <div class="command">
+                <div class="name-cmd"><code>ban</code></div>
+                <div class="description">
+                    Comando para realizar banimentos de membros.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const list = document.getElementById("list");
+
+        let tier = false;
+        list.addEventListener("click", () => {
+            if (!tier) {
+                list.style.maxHeight = `${list.scrollHeight}px`;
+                tier = true;
+            } else {
+                list.style.maxHeight = `30px`;
+                tier = false;
+            };
+        });
+    </script>
+</body>
+</html>
